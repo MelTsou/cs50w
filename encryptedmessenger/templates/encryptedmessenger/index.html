@@ -1,0 +1,67 @@
+{% extends "encryptedmessenger/layout.html" %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+        <nav class="navbar navbar-light shadow-lg px-4 mt-4"
+             data-username="{{ request.user.username }}">
+            <span class="navbar-brand mb-0 h1">SSEMapp</span>
+            {#        <span class="h5">Server-Side Encrypted Messaging App</span>#}
+            <span class="ms-auto me-2">Signed in as <strong>{{ user.username }}</strong></span>
+            <a class="btn btn-outline-secondary btn-sm" href="{% url 'logout' %}">Logout</a>
+        </nav>
+        <div class="alert alert-success mt-2" role="alert" hidden></div>
+        <div class="alert alert-danger mt-2" role="alert" hidden></div>
+        <div class="container-fluid py-4 logged-in-main-view">
+            <div class="row g-3">
+                <div class="col-12 col-md-4">
+                    <div class="card shadow-lg">
+                        <div class="card-header">Conversations</div>
+                        <div class="card-body">
+                            <div>
+                                <label class="form-label small mb-1" for="new-members">Insert Participants (separate
+                                    each username with comma)</label>
+                            </div>
+                            <div class="mb-2 d-flex create-conv">
+                                <input id="new-members" class="form-control mb-1"
+                                       placeholder="e.g.: george,john,maria">
+                                <button id="create-conv" class="btn btn-primary ms-2">Create</button>
+                            </div>
+                            <ul id="conv-list" class="list-group small mt-4"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8">
+                    <div class="card shadow-lg chat-card">
+                        <div id="current-conv-card-header"
+                             class="card-header d-flex justify-content-between align-items-center">
+                            <span id="conv-title" class="">Select a conversation</span>
+                            <div class="d-flex align-items-center gap-2">
+                                <span id="autodestruct-status" class="badge bg-secondary ms-2"></span>
+                                <select id="autodestruct-select" class="form-select form-select-sm" style="width:auto;"
+                                        hidden>
+                                    <option value="">Self-destruct…</option>
+                                    <option value="1">1 min</option>
+                                    <option value="3">3 min</option>
+                                    <option value="5">5 min</option>
+                                </select>
+                                <button id="autodestruct-btn" class="btn btn-outline-danger btn-sm" hidden>
+                                    Set
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body chat-messages">
+                            <div id="messages" class="d-flex flex-column gap-2"></div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="input-group">
+                                <input id="message-input" class="form-control" placeholder="Type a message...">
+                                <button id="send-btn" class="btn btn-primary" disabled>Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
