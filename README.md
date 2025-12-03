@@ -84,3 +84,9 @@ The UI is designed with Bootstrap's grid system and classes and CSS @media.
 It fulfills the mobile-responsiveness requirement.
 ### Future Development
 The `meta` JSON field, the `kek_id` field and the separate `enc_services.py` are there so it's easy to add seen status, KEK rotation, etc.
+
+
+## Disclaimer: CS50 Academic Honesty
+This repository contains my personal solutions to Harvard’s CS50 Web Programming with Python and JavaScript.  
+It is published for portfolio purposes only.  
+Per CS50’s academic honesty policy, students should not copy or submit any of this code as their own.
