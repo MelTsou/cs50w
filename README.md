@@ -87,6 +87,6 @@ The `meta` JSON field, the `kek_id` field and the separate `enc_services.py` are
 
 
 ## Disclaimer: CS50 Academic Honesty
-This repository contains my personal solutions to Harvard’s CS50 Web Programming with Python and JavaScript.  
+This repository contains my personal solutions to Harvard’s CS50 Web Programming with Python and JavaScript's Final Project (Capstone).  
 It is published for portfolio purposes only.  
 Per CS50’s academic honesty policy, students should not copy or submit any of this code as their own.
