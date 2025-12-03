@@ -1,6 +1,8 @@
 # SSEMapp 
 ## Server-Side Encrypted Messaging Application
 
+https://youtu.be/qazeRSCwbAc
+
 SSEMapp is a compact, privacy oriented web application that offers private group messaging with server-side encryption and optional self-destructing conversations.
 The signed-in users have the ability to create conversations, send and receive text messages, as well as configure a timer that automatically deletes all messages in a conversation after a predefined time delay.
 
